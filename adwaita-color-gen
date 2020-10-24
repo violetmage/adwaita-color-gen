@@ -233,7 +233,7 @@ else
 fi
 
 
-
+#skip download option, allows user overriding
 if [ "$skip_download" != "Y" ] && [ "$skip_download" != "y" ] ; then
 
     #download/derive sources
@@ -263,9 +263,10 @@ if [ "$skip_download" != "Y" ] && [ "$skip_download" != "y" ] ; then
     	#tar -C ./Adwaita-sources/gtk-3.0 --strip-components=4 -xzf ./Adwaita-sources/gtk3.tar.gz gtk-master-gtk-theme-Adwaita/gtk/theme/Adwaita #master branch
     	tar -C ./Adwaita-sources/gtk-3.0 --strip-components=4 -xzf ./Adwaita-sources/gtk3.tar.gz gtk-gtk-3-24-gtk-theme-Adwaita/gtk/theme/Adwaita #3.24
     fi
-    rm -f ./Adwaita-sources/gtk-3.0/assets/*.png
 
 fi
+
+rm -f ./Adwaita-sources/gtk-3.0/assets/*.png
 
 #easier to overwrite gtk.css than modify them to work
 verbose "modifying gtk.css"
